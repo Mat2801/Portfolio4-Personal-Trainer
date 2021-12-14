@@ -44,14 +44,14 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Training<em> Studio</em></a>
+                        <a href="home.html" class="logo">Phoenix<em> Fitness</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="#features">About</a></li>
                             <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
-                            <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
+                            <li class="scroll-to-section"><a href="#booking">Book A Class</a></li>
                             <li class="scroll-to-section"><a href="#contact-us">Contact</a></li> 
                             <li class="main-button"><a href="#">Sign Up</a></li>
                         </ul>        
@@ -392,26 +392,29 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div id="map">
-                      <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1191.5751710461427!2d-1.9190099699410221!3d53.32266139613946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a3399ead3435b%3A0xbf6828e39d2ad074!2sHigh%20St%2C%20Chapel-en-le-Frith%2C%20High%20Peak!5e0!3m2!1sen!2suk!4v1639498217823!5m2!1sen!2suk" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
+
+                <!--Contact Us Form-->
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="contact-form">
-                        <form id="contact" action="" method="post">
+                        <form id="contact" action="{% url 'home' %}" method="post">
+                            {% csrf_token %}
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
-                                <input name="name" type="text" id="name" placeholder="Your Name*" required="">
+                                <input name="message-name" type="text" id="name" placeholder="Your Name*" required="">
                               </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
-                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email*" required="">
+                                <input name="message-email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email*" required="">
                               </fieldset>
                             </div>
                             <div class="col-md-12 col-sm-12">
                               <fieldset>
-                                <input name="subject" type="text" id="subject" placeholder="Subject">
+                                <input name="message-subject" type="text" id="subject" placeholder="Subject">
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
